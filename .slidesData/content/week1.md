@@ -5,6 +5,12 @@ outputs: ["Reveal"]
 date: 2022-02-14T23:44:17+11:00
 ---
 
+<style>
+    .reveal {
+        font-size: 36px;
+    }
+</style>
+
 {{< slide class="center" >}}
 
 ## COMP6441 Week 1
@@ -233,42 +239,105 @@ Questions?
 
 ---
 
-## brrrr[.](https://www.openlearning.com/unswcyber/courses/security-engineering-22t1/casestudies/rumble)
+a lil' scenario for this week
 
-&nbsp;  
+> Note
+
+* Incident response
+* This is not an ethics course
+* I am not a lawyer
+* Plot holes everywhere
+
+---
+
+## brrrr[.](https://www.openlearning.com/unswcyber/courses/security-engineering-22t1/casestudies/rumble)
 
 {{% section %}}
 
 ---
 
+&nbsp;  
 Location: UNSW.
 
 CSE K17, Sydney, Australia, Southern Hemisphere, Earth, uhh.
 
 ---
 
-The year is 2024.  
-&nbsp;  
-The mayor is Ruchard Bickland.  
-<small>* Not related to Richard Buckland</small>
+<u>The year is 2024.</u>  
+Elections are soon and Ruchard Bickland is currently giving his election speech. <small>* Not to be confused with Richard Buckland</small>
 
-Pluto isn't a planet.  
+> Promises
 
-Tasmania is no longer a part of Australia  
+✅ All courses to be pass/fail
+
+🚧 Dedicated roads for the 891 (😭)
+
+🌌 For Pluto to be a planet again.  
+
+🌏 Make Tasmania no longer a part of Australia  
 (tbh never was)  
 
 ---
 
-and COVID-19 is still looming around. <small>wait what</small>  
+oh, and COVID-19 is still looming around. <small>wait what</small>  
 
-COVID-19 RAT tests are affordable 
+> COVID-19 RAT tests are affordable,  
+> perhaps too affordable ...  
+
+Because of their rather fast results, the government has mandated that every time someone leaves their home, for _any_ sort of reason, they must test themselves - even if multiple times on the same day
 
 ---
 
-You feel a tremor... the ground starts to rumble
+However, the over-supply and over-use of tests out in public has caused stress on public cleaning services 🚮. The majority of trash collectors have contracted COVID-19 and have to self-isolate, therefore being out of work, and unable to carry out their duties. Bins aren't being emptied as often as they should.. 🧪
 
-<!-- * Flood -->
+> What are some the issues?
 
+> What are the effects on the community?
+
+---
+
+{{< slide transition=fade >}}
+
+You feel a tremor... <u>the ground starts to rumble</u>.
+
+But the councillor (Ruchard Bickland) <small>(again, not related to Richard Buckland)</small> assures you that there's nothing to worry about™. It's just the construction and road works.
+
+> Should you worry?
+
+---
+
+{{< slide transition=fade >}}
+
+You feel a tremor... <u>the ground starts to rumble</u>.
+
+But the councillor (Ruchard Bickland) <small>(again, not related to Richard Buckland)</small> assures you that there's nothing to worry about™. It's just the construction and road works.
+
+On some beach near Coogee, the surfers are bored because the tides are <u>way lower than usual</u>. Ruchard tells them to refill the ocean with the spare bottles of Mount Franklin water.
+
+> Should you worry?
+
+---
+
+{{< slide transition=fade >}}
+
+You feel a tremor... <u>the ground starts to rumble</u>.
+
+But the councillor (Ruchard Bickland) <small>(again, not related to Richard Buckland)</small> assures you that there's nothing to worry about™. It's just the construction and road works.
+
+On some beach near Coogee, the surfers are bored because the tides are <u>way lower than usual</u>. Ruchard tells them to refill the ocean with the spare bottles of Mount Franklin water.
+
+The ocean wind is also <u>rather loud</u> today...
+
+> Should you worry?  
+
+{{% note %}}
+Is this a _warning sign_ for anything?
+
+What should we do?
+
+Get somewhere high!
+Tell our friends?
+{{% /note %}}
 
 ---
 
@@ -282,12 +351,39 @@ What could go wrong?
 
 {{% note %}}
     Sure we're safe for now, but what about the aftermath?
+
+    * Bio-hazards?
+    * Water damage?
+    * Sludge?
+    * Water pipes, power lines, infrastructural damage?
+
+    How will that impact every day life?
+
+    * No power
+    * Buy bottled water
+    * Toilet paper?
+{{% /note %}}
+
+---
+
+> Is anyone at fault?
+
+> What should have been done better?
+
+> What does this say about trust?
+
+{{% note %}}
+Causality, correlation
+
+Can we trust everything we hear?
+
+Not only think about the immediate consequences of actions, but the effects
+
 {{% /note %}}
 
 {{% /section %}}
 
 ---
-
 
 ### Things To Do
 
