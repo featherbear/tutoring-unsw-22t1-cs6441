@@ -233,6 +233,62 @@ Questions?
 
 ---
 
+## brrrr[.](https://www.openlearning.com/unswcyber/courses/security-engineering-22t1/casestudies/rumble)
+
+&nbsp;  
+
+{{% section %}}
+
+---
+
+Location: UNSW.
+
+CSE K17, Sydney, Australia, Southern Hemisphere, Earth, uhh.
+
+---
+
+The year is 2024.  
+&nbsp;  
+The mayor is Ruchard Bickland.  
+<small>* Not related to Richard Buckland</small>
+
+Pluto isn't a planet.  
+
+Tasmania is no longer a part of Australia  
+(tbh never was)  
+
+---
+
+and COVID-19 is still looming around. <small>wait what</small>  
+
+COVID-19 RAT tests are affordable 
+
+---
+
+You feel a tremor... the ground starts to rumble
+
+<!-- * Flood -->
+
+
+---
+
+jk UNSW is on a giant slope, so we're fine!
+
+right...?
+
+<img src="rumble/high_ground.jpg" height=250 />
+
+What could go wrong?
+
+{{% note %}}
+    Sure we're safe for now, but what about the aftermath?
+{{% /note %}}
+
+{{% /section %}}
+
+---
+
+
 ### Things To Do
 
 * Join the T10A OpenLearning group
