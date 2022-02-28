@@ -3,7 +3,6 @@ title: "Lock Picking"
 layout: "bundle"
 outputs: ["Reveal"]
 date: 2022-02-28T15:39:40+11:00
-draft: true
 
 reveal_hugo:
     transition: "fade"
