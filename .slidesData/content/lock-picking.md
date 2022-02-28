@@ -175,7 +175,7 @@ Manufacturing imperfections, even distances in millimeters are enough
 
 {{% section %}}
 
-> No lock is complete secure™
+> No lock is completely secure™
 
 * Better fundamental designs <span style="color: grey; font-size: 0.7em">(i.e. anti-shim)</span>
 * Hardened / reinforced inserts <span style="color: grey; font-size: 0.7em">(i.e. anti-drill)</span>
