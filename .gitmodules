@@ -3,4 +3,4 @@
 	url = git@github.com:dzello/reveal-hugo.git
 [submodule ".slidesData/static/reveal-js/plugin/reveal-embed-video"]
 	path = .slidesData/static/reveal-js/plugin/reveal-embed-video
-	url = https://github.com/ThomasWeinert/reveal-embed-video
+	url = https://github.com/featherbear/reveal-embed-video
