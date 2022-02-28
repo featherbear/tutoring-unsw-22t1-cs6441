@@ -12,7 +12,7 @@
     {{- if fileExists (printf "layouts/partials/%s.html" $sectionHeadPartial) -}}{{ partial $sectionHeadPartial . }}{{- end }}
   </head>
   <body>
-    <div class="reveal" data-video="small top-right">
+    <div class="reveal" data-video="small top-left">
       <div class="slides">
         {{- block "main" . -}}{{- end -}}
       </div>
