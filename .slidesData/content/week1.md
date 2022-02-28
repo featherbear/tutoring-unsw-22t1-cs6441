@@ -1,5 +1,5 @@
 ---
-title: "Week 1"
+title: "Week 1 - Course Overview    "
 layout: "bundle"
 outputs: ["Reveal"]
 date: 2022-02-14T23:44:17+11:00

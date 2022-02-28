@@ -15,14 +15,6 @@ date: 2022-02-22T08:26:39+11:00
 
 ### Case Study
 
-
-* What happened?
-
-
----
-
-### W1 Trust
-
 ---
 
 ### Errors
@@ -32,7 +24,6 @@ date: 2022-02-22T08:26:39+11:00
 
 > Which is better
 
-
 ---
 
 ### Things To Do
@@ -41,4 +32,3 @@ date: 2022-02-22T08:26:39+11:00
 * Weekly activities
 * Summary recap videos
 * [secso.cc/food-2](https://secso.cc/food-2)
-
