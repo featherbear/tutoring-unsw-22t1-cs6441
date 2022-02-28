@@ -163,9 +163,14 @@
    * @private
    */
   LiveStream.prototype._create = function () {
+    const videoConstraints = {
+      width: { ideal: 1920 },
+      height: { ideal: 1080 },
+    }
+
     var constraints = {
       audio: false,
-      video: true
+      video: videoConstraints
     };
     // noinspection JSUnusedGlobalSymbols
     this._status = LiveStream.STATUS.PENDING;
@@ -190,7 +195,7 @@
         );
     }
     if (this._currentDeviceId) {
-      constraints.video = {deviceId: this._currentDeviceId};
+      constraints.video = {deviceId: this._currentDeviceId, ...videoConstraints};
     }
     navigator
       .mediaDevices
