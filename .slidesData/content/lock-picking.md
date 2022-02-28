@@ -4,6 +4,10 @@ layout: "bundle"
 outputs: ["Reveal"]
 date: 2022-02-28T15:39:40+11:00
 draft: true
+
+reveal_hugo:
+    transition: "fade"
+
 ---
 
 {{< slide class="center" >}}
@@ -18,10 +22,20 @@ draft: true
 
 ## Locks
 
+
+<img src="lock1.png" width="220px">
+<img src="lock2.png" width="220px">
+<img src="lock3.png" width="220px">
+<img src="lock4.png" width="220px">
+<img src="lock5.png" width="220px">
+<img src="lock6.png" width="220px">
+
 <!-- Different types of locks -->
 
 
 ---
+
+{{< slide video=big >}}
 
 ## Tumbler Locks
 
@@ -39,13 +53,14 @@ One of the earliest lock designs originates from Egypt (20th Century BC)
     <li>Made entirely from wood</li>
     <li>Probably flammable</li>
     <li>Rain would be a pain</li>
-    <li>Low Durability</li>
+    <li>Low durability</li>
 </ul>
 </div>
 
 ---
 
 ### Anatomy
+
 
 {{% note %}}
 anatomy of a tumbler ( pins, keyway, shear line, gates )
@@ -67,39 +82,64 @@ Advisable to use the clear practise lock
 
 ![](tumbler-animation.gif)
 
+How does the right key work?  
+Why does the wrong key not work?
+
 {{% /section %}}
 
 ---
 
+{{< slide video=big >}}
+
 ## Attacking Tumbler Locks
 
 {{% section %}}
-> Do not do on active locks
+
+> Don't perform attacks on active locks
+
+&nbsp;  
+
+🙊 If the pick breaks...
+
+and i oop 🙈
+
+---
 
 ### Lock Weaknesses
 
-* Manufacturing imperfections
+{{% note %}}
+Manufacturing imperfections, even distances in millimeters are enough
+{{% /note %}}
 
 |How it started|How it's going|
 |:------------:|:------------:|
 |![](hole-alignment.png)|![](hole-alignment-offset.png)|
 
-* Design flaws
+---
+
+{{< slide transition=fade >}}
+
+### Attacker's Toolbox
+
+> Non-destructive methods
+
+* Lock pick
+* Torque wrench
+* Rakes
+* Pick gun
+* Bump keys
+* Shims
 
 ---
 
 ### Attacker's Toolbox
 
-* Picking tools
-    * Lock pick
-    * Torque wrench
+> Destructive methods
 
-
-* Rakes
-* Pick gun
-* Bump keys
-Drill through the lock core
-Shim
+* Break the shackle (bolt cutter / wrenches)
+* Break the lock keyhole (drill)
+* Chemicals? Corrosion?
+* Break the thing the lock is locking
 
 ---
 
@@ -107,45 +147,85 @@ Shim
 
 ![](tumbler-picking-animation.gif)
 
+* Apply a rotational force with the torque wrench
+* Find the next pin that is 'binding'
+    * Lift that pin
+* Repeat
 
 ---
 
-{{< slide video="full" >}}
+> Tip: Don’t put the lock pick too far in!
 
 ---
 
+### Attacker's Toolbox
+
+> Other non-destructive methods
+
+* <span style="color: grey">Lock pick</span>
+* <span style="color: grey">Torque wrench</span>
+* Rakes
+* Bump keys
+* Pick gun
+* Shims <span style="color: grey; font-size: 0.7em">(why / when does this work?)</span>
 
 {{% /section %}}
 
-* tip: don’t put the pick too far
+---
+### <s>Defending</s> Mitigating attacks
 
+{{% section %}}
 
+> No lock is complete secure™
 
+* Better fundamental designs <span style="color: grey; font-size: 0.7em">(i.e. anti-shim)</span>
+* Hardened / reinforced inserts <span style="color: grey; font-size: 0.7em">(i.e. anti-drill)</span>
+* False gates <span style="color: grey; font-size: 0.7em">(i.e. reduce low-skill attacks)</span>
+* Small / non-standard locks <span style="color: grey; font-size: 0.7em">(i.e. require tools)</span>
+* MORE PINS
+* Multiple pin rows
+* Spool pins (next slide)
 
-## <s>Defending</s> Mitigating attacks
+---
 
-* Spool pins
-* False gates 
-* Small / non-standard locks - Need smaller tools
-* Hardened inserts
-* Better designs
+#### Spool pins
+
+Tapered pins interfere with the key cylinder rotation
+
+![](spool-pins.gif)
+
+---
+
+#### Picking vs Decoding
+
+Picking is temporary, but once you reset the lock you've lost the combination!
+
+Decoding a lock allows you to know the depths so you can recreate a key
+
+{{% /section %}}
 
 ---
 
 ## Rotary Locks
 
-<!-- diagram -->
-Rotary probe
+<img src="dial-combination-lock.webp" width=250px>
+<img src="dial-combination-lock-diagram.webp" width=250px>
 
---- 
-
-## Tubular Locks
-
-Impressioning tool
+* Feeling for clicks / movement of the shackle
+* Decoders
+* Bypassing with levers
 
 ---
 
-## Doors
+## Other Locks
 
-Doors - hinge puller
-
+* Tubular locks - Impressioning tool <span style="color: grey; font-size: 0.7em">(why does this work?)</span>
+* Doors
+    * Hinge pin tool (or a centre punch and a mallet)
+    * Shove tool
+* RFID
+    * Cloning
+    * Spoofing
+* Circuitry
+    * Physical tampering (buttons, wires, etc..)
+    * Fail-safe vs fail-secure design
