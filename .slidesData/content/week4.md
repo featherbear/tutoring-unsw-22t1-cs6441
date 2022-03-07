@@ -41,6 +41,17 @@ date: 2022-03-08T00:44:31+11:00
 
 --- 
 
+## Disk Forensics
+
+> A little insight into forensics
+
+* How does a filesystem / disk work?
+* How is metadata stored?
+* Is deleting a file safe?
+* Is formatting a disk safe? Zeroing?
+
+---
+
 ## Engineering Stuff
 
 * Bits of Security / Work
