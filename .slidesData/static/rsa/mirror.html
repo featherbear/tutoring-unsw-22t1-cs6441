@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Merkle Puzzle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style type="text/css">
+   		.box.envelope {
+   			background-color:#FED04E;
+   			
+   		}
+   		.box {
+   			background-color:#F5F5F5;
+   			padding:60px 100px;
+   			margin: 20px 0px;
+   		}
+   		.box.border {
+   			background-color: #FFF;
+   			border: 2px solid;
+   			padding:60px 50px;
+   			margin-bottom:20px;
+   		}
+   		.error {
+   		color:red;
+   		font-weight:500;
+   		font-style:italic;
+   		text-align:center;
+   		}
+   		
+   		.success {
+   		color:green;
+   		font-weight:500;
+   		font-style:italic;
+   		text-align:center;
+   		}
+   		
+   		input {
+   			width:300px;
+   		}
+  </style>
+  </head>
+  <body>
+  
+	 
+    <!-- Page Content -->
+    <div class="container">
+    	<BR>
+    	<section class="box border">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<h1 class="mt-5 text-center">RSA Public & Private Keys</h1>
+    				<!P>We're going to generate our own public and private keys using the RSA algorithm. We can these keys as a form of encryption.</P>
+    			</div>
+    		</div>
+    	</section>
+    	<!--h1 class="mt-5 text-center">RSA : Generating Public & Private Keys</h1-->
+    	<section class="box">
+    	
+    		<div class="row">
+    		
+    			<div class="col-sm-12 text-center">
+    				<BR>
+    				<h3><strong>Step 1 :</strong> Choose values for p & q</h3>
+          		<P>The first step of RSA is to choose two prime numbers, p & q. They should be greater than 2. </P>
+          		<P>p & q should be considered secret values as if someone discovered them, they could derive your private key.</P>
+          		<HR>
+    			</div>
+    		
+    		</div>
+    		
+    		
+    		<div class="row">
+    			<div class="col-sm-8 offset-sm-4">
+    				<label for="inputP" class=" col-form-label">p : </label>
+			       <input type="number" class="" id="inputP" placeholder="Prime No">
+			       
+			    </div>
+			    <label for="inputP" id="inputPError" class="error col-sm-12"> Um... are you sure that's a prime number?</label>
+    		</div>
+    		
+    		<div class="row">
+    			<div class="col-sm-8 offset-sm-4">
+    				<label for="inputQ" class="col-form-label">q : </label>
+			       <input type="number" class="" id="inputQ" placeholder="Prime No">
+			       
+			    </div>
+			    <label for="inputQ" id="inputQError" class="error col-sm-12"> Um... are you sure that's a prime number?</label>
+			    <label for="inputQ" id="inputPQDuplicateError" class="error col-sm-12"> Hey... Make sure p & q are not the same!</label>
+			    <label id="step-one-success" class="success col-sm-12"> Awesome. Those are some nice prime numbers you've got there!</label>
+    		</div>
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<button id="pickPQ">Pick numbers for me</button>
+    		</div>
+    	</section>
+    	
+    		<section class="box" id="step2">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<BR>
+    				<h3><strong>Step 2 :</strong> Calculate n for the keys</h3>
+    				<P>The value n is included in both the public and private key, so it's a value that's publicly known to everyone. We will calculate it now, but we don't need it until we include it in the public & private keys. So, I want you to think of n as - <strong>not</strong> used until the end.</P>
+    				<P>Fortunately its very easy to calculate n using the formula : </p>
+    				<P><strong>n =  p  * q </strong></P>
+    				<HR>
+    				
+          		
+    			</div>
+    		</div>
+    		
+    		
+    		<div class="row">
+    			<div class="col-sm-7 offset-sm-5">
+    			
+    				<P>n = p * q </P>
+    				<P>n = <span class="pValue">257</span> * <span class="qValue">337</span></P>
+    				<P>n = <span class="nValue">86609</span></P>			    		</div>
+    		</div>	
+    		
+    		</section>
+    	
+    	    <section class="box" id="step3">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<BR>
+    				<h3><strong>Step 3 :</strong> Calculate Euler's totient (ϕ)</h3>
+          		<P>This step uses fancy maths words - but don't be scared.</P><P> We're calculating something called Euler's totient (ϕ), but its super easy to do. </P>  <P>ϕ is pronounced as 'phi' so we will also call it that. </P><P>ϕ is used to create your private key, so should be considered confidential.</P>
+          		<HR>
+          		
+    			</div>
+    		</div>
+    		
+    		
+    		<div class="row">
+    			<div class="col-sm-8 offset-sm-4">
+    					
+    					ϕ(n) = ( p-1 ) * ( q-1) <BR>
+    					ϕ(n) = ( <span class="pValue">257</span>-1 ) * ( <span class="qValue">337</span>-1 )<BR>
+    					ϕ(n) = <span class="pLessOneValue">256</span> * <span class="qLessOneValue">336</span><BR>
+    					ϕ(n) = <span class="phi">86016<span><BR>
+	       
+			    </div>
+			    
+    		</div>
+
+    		
+    			<!--div class="col-sm-8 offset-sm-4">
+    				<label for="inputP" class=" col-form-label">p : </label>
+			       <input type="number" class="" id="inputP" placeholder="Prime No">
+			       ϕ(n) = ( p-1 ) * ( q-1) = ( 257-1 ) * ( 337-1 ) = 256 * 336 = 86016<BR>
+			    </div>
+			    <label for="inputP" id="passwordHelp" class="error col-sm-12"> Um... are you sure that's a prime number?</label>
+    		</div-->
+    		
+    		
+    		</section>
+    		
+    		
+    		
+    		<section class="box" id="step4">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<BR>
+    				<h3><strong>Step 4 :</strong> Choose a value e for the public key</h3>
+    				<!--h3><strong>Step 4 :</strong> For the public key pick an e that is relatively co-prime to ϕ</h3-->
+    				<P>e will become one of the two values that make up the 'public' key.</P>
+    				<HR>
+    				<P>Pick a random number e, that is 'relatively co-prime' with the Euler's totient in the range  [3,ϕ(n)).</P> 
+    				<P>'Relatively co-prime' means we have to choose a value for e that doesn't share any factors with phi.<small>[<a href="http://virtualnerd.com/middle-math/number-theory-fractions/factors-prime/factor-definition" target="_new">Remind me what a factor is again?</a>]</small>.</P> <P>In other words, e must be a prime number, and if you divide phi by it, phi should <strong>not</strong> evenly divide into e.</P>
+    				
+          		<P></P>
+          		
+          		<HR>
+          		
+    			</div>
+    		</div>
+    		
+    		
+    		<div class="row">
+    			
+    			
+    			<div class="col-sm-8 offset-sm-3">
+    				<label for="inputE" class=" col-form-label">e : </label>
+			       <input type="number" class="" id="inputE" placeholder="Relatively Co-Prime Number"> <button id="pickE">Pick e for me</button>
+			       
+			    </div>
+			    
+			    <div class="col-sm-12 text-center">
+			    <HR>
+    			<P><Strong>Factors of ϕ : </strong><span id="phi-factors">1,2,3</span></p>
+    			<P><Strong>Factors of e : </strong><span id="e-factors"><em>Please pick an e first - tip : choose the next prime not listed above</em></span></p>
+    			</div>
+			    <div id="e-error" class="col-sm-12 text-center">
+			    	<label for="inputE" id="eError" class="error col-sm-12"> Ah oh... e must be coprime with phi, so cannot share any factors with phi. Pick another value. </label>
+			    	<label for="inputE" id="eRangeError" class="error col-sm-12"> Oh no... e must be greater than or equal to 3, and less than phi. Pick another value. </label>
+			    	<label for="inputE" id="eSuccess" class="success col-sm-12 text-center" style="text-align:center;"> Awesome! e is coprime with phi because e doesn't share any factors with phi</label>
+			    	
+			    </div>
+    		</div>	
+    		</section>
+    		
+    		
+    		   		<section class="box envelope" id="step4a">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<BR>
+    				<h3><strong>Your Public Key</strong></h3>
+    				<em>Congratulations! You've just created your first public key!</em>
+    				<HR>
+    				
+		    		<div class="text-center">
+		    			
+		    			<h4>Public Key : (e=<span class="eValue">17</span>, n=<span class="nValue">86609</span>)</h4>
+		    		</div>
+		    		<HR>
+    				<P>In RSA, public keys are comprised of two values e and n. So most private keys look like this - Private Key : (e, n)</P>
+    				<!--P>Although we haven't calculated n yet (we'll calculate that at the end - its super easy), we've just calculated e, which is the unique part of the public key.</P--> <P>Its easy to get all the letters mixed up, so its good to remember that e stands for encrypting, which is usually what you use the public key for. </P>
+    		</section>
+ 
+ 
+    		<section class="box" id="step5">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<BR>
+    				<h3><strong>Step 5 :</strong> Choose a value d for the private key</h3>
+    				<P>To come up with the value d (which will be used in the private key) we must solve this equation.</P>
+    				<P><strong>e * d mod ϕ = 1 </strong></P>
+    				<P>That means we need to guess a value of d, which when multiplied with e and then divided by ϕ will have a remainder of 1.           		
+          		<HR>
+    			</div>
+    		</div>
+    		<div class="row">
+    			<div class="col-sm-8 offset-sm-3">
+    				<label for="inputD" class=" col-form-label">d : </label>
+			       <input type="number" class="" id="inputD" placeholder="Prime No"> <button id="pickD">Pick d for me</button>
+			    </div>
+			    <div id="e-error" class="col-sm-12 text-center"><BR>
+			    	<P><span class="eValue">e</span> * <strong><span class="inputDVal">d</span></strong> mod <span class="phi">ϕ</span> = <strong><span id="d-mod-result">?</span></strong></P>
+			    </div>   
+    		</div>	
+    		<HR>
+    		<div class="offset-md-5">
+    			<P><strong>e * d mod ϕ = 1 </strong></P>
+    			<P><strong><span class="eValue">17</span> * <span class="dValue">d</span> mod <span class="phi">86016</span> = 1 </strong></P>
+    			
+    		</div>
+    		<div>
+    			<label id="passwordHelp" class="error col-sm-12"> Oh no... Try again. When you divide (e*d) by ϕ, the 'remainder' needs to be 1</label>
+			    	<label  id="passwordHelp" class="success col-sm-12"> Awesome!</label>
+    		</div>
+    		</section>
+    		
+    		
+    		<section class="box envelope" style="" id="step5a">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<BR>
+    				<h3><strong>Your Private Key</strong></h3>
+    				<em>Congratulations! Now you have a private key!</em>
+    				<HR>
+    				
+		    		<div class="text-center">
+		    			<h4>Private Key : (d=<span class="dValue">65777</span>, n=<span class="nValue">86609</span>)</h4>
+		    		</div>
+		    		<HR>
+		    		<P>d is used in the private key to decrypt any messages encoded with the public key (e).</P>
+		    		<!--P>We are still missing the number n, which we will calculate in the next section</P-->
+    				<P>Remember that d stands for decrypting, which is usually what you use the private key to do.</P>
+    		</section>
+    		
+    		
+    		
+    		
+    		<section class="box envelope" style="background-color:#FCA960;" id="step5b">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<BR>
+    				<h3><strong>Your Final Private & Public Keys</strong></h3>
+    				
+    				<HR>
+    				
+		    		<div class="text-center">
+		    			<h4>Public Key : (d, n)</h4>
+		    			<h4>Public Key : (123123123, n)</h4>
+		    		</div>
+		    		<HR>
+		    		<div class="text-center">
+		    			<h4>Private Key : (d, n)</h4>
+		    			<h4>Private Key : (123123123, n)</h4>
+		    		</div>
+		    		<HR>
+		    		<em>When the n value is paired with e it becomes the public key, and when n is paired with d it becomes the private key.</em>
+    		</section>
+    		
+    		<section class="box border" id="step6">
+    		<div class="row">
+    			<div class="col-sm-12 text-center">
+    				<h1 class="mt-5 text-center">RSA Encryption</h1>
+    				<P>Now we're going to use the public/private keys that we just generated to encrypt and decrypt messages. Often the things we end up encrypting with RSA is other keys - symmetric keys which can be used in less computationally intensive block ciphers. For that reason, RSA more often considered a key-exchange protocol than an encryption algorithm.</P>
+    			</div>
+    		</div>
+    	</section>
+    		
+    		
+    		
+    		
+   	<section class="box" id="encrypting">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<br>
+				<h3><strong>Encrypting with Public Key</strong></h3>
+				<p>To encrypt a message 'm', we first convert it to a large number then we calculate the following :</p>
+				<p><strong>c = m<sup>e</sup> mod n</strong></p>
+				<p>Where c stands for cipher-text, m stands for the plain-text (the character we are trying to encrypt), and e and n come from the public key.</p>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8 offset-md-3">
+				<label class=" col-form-label" for="inputP">Enter a letter to encrypt:</label> <input class="" id="inputM" placeholder="" type="text">
+			</div>
+		</div>
+		<hr>
+		<div class="col-sm-12 text-center">
+			<br>
+			<p>To encrypt 'A' we use the following formula with the public key (e=17,n=86609).</p>
+		</div>
+		<div class="offset-md-5">
+			<!--P><em>e = encryption/public key &nbsp; n = modulo value from public key</em></P-->
+			<p><strong>c = m<sup>e</sup> mod n</strong></p>
+			<p><strong>c = <span class="mValue">m</span><sup>e</sup> mod n</strong> <em>&nbsp;&nbsp;(<span class="mValueChar">character</span> converted to ASCII value <span class="mValue"></span>)</em></p>
+			<p><strong>c = <span class="mValue">m</span><sup><span class="eValue">e</span></sup> mod <span class="nValue">n</span></strong></p>
+			<p><strong>c = <span class="mValue">m</span><sup><span class="eValue">17</span></sup> mod <span class="nValue">86609</span></strong></p>
+			<p><strong>c = <span class="cValue">c</span></strong></p>
+		</div>
+		<hr>
+		<div class="col-sm-12 text-center">
+			<br>
+			<p>To decrypt a cipher 'c', we apply the same process, but using the private key (d,n).</p>
+		</div>
+		<div class="offset-md-5">
+			<!--P><em>e = encryption/public key &nbsp; n = modulo value from public key</em></P-->
+			<p><strong>m = c<sup>d</sup> mod n</strong></p>
+			<p><strong>m = <span class="cValue">c</span><sup><span class="">d</span></sup> mod <span class="">n</span></strong> <em>&nbsp;&nbsp;(c substituted for actual cipher text in number form )</em></p>
+			<p><strong>m = <span class="cValue">c</span><sup><span class="dValue">d</span></sup> mod <span class="nValue">n</span></strong> 
+			<p><strong>m = <span class="mValue">12448</span></strong></p>
+			<p><strong>m = <span class="mValueChar">12448</span></strong></p>
+		</div>
+	</section>
+    		
+    		
+    		   	<section class="box border" id="encrypting-test">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<br>
+				<h3><strong>Test it out yourself</strong></h3>
+				<p>To encrypt a message 'm', we first convert it to a large number then we calculate the following :</p>
+				
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h6>Enter a Public Key</h6>
+				<label class=" col-form-label" for="pubE">e :</label> <input class="" id="pubE" placeholder="" type="text"><label class=" col-form-label" for="pubN">
+				 &nbsp; n :</label> <input class="" id="pubN" placeholder="" type="text">
+				 <BR><BR><h6>Enter a Private Key</h6>
+				<label class=" col-form-label" for="priD">d :</label> <input class="" id="priD" placeholder="" type="text"><label class=" col-form-label" for="priN">
+				 &nbsp; n :</label> <input class="" id="priN" placeholder="" type="text">
+			</div>
+			<div class="col-sm-8 offset-md-3">
+				
+			</div>
+		</div>
+		<hr>
+		<div class="col-sm-10 offset-sm-1 text-center">
+			
+				<div class="form-group">
+				  <label for="comment"><strong>Plain Text:</strong></label>
+				  <textarea class="form-control" rows="5" id="plain-text"></textarea>
+				</div>
+				<BR>
+				<div class="form-group">
+				  <label for="comment"><strong>Cipher Text</strong></label>
+				  <textarea class="form-control" rows="5" id="cipher-text"></textarea>
+				</div>
+		</div>
+		
+	</section>
+  
+      
+    </div>
+    
+    
+
+
+
+  
+  <script src="../../../ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  	
+  	
+  	
+   function autorun(){
+   		// VARIABLES -------------------------------
+   		var inputP = "";
+   		var inputQ = "";
+   		var phi = "";
+   		var inputE = "";
+   		var inputD = "";
+   
+   
+   
+   		// SETUP -------------------------
+   		$(".error").hide();
+   		$(".success").hide();
+   		$("#step2").hide();
+   		$("#step3").hide();
+   		$("#step4").hide();
+   		$("#step4a").hide();
+   		$("#step5").hide();
+   		$("#step5a").hide();
+   		$("#step5b").hide();
+   		$("#step6").hide();
+   		$("#encrypting").hide();
+   		$("#encrypting-test").hide();
+   
+   		// STEP 1 -------------------------------------
+   		// Update the p value
+   		$("#inputP").focusout( function() {
+   			var currNo = $("#inputP").val();
+   			//Check that p is valid
+   			if (isPrime(currNo)) {
+   				
+   				inputP = currNo;
+   				$("#inputPError").hide();
+   				checkDuplicatePQ();
+   				checkSuccessPQ();
+   				updatePValues(inputP);
+   			} else {
+   				$("#inputPError").show();
+   				checkDuplicatePQ();
+   				checkSuccessPQ();
+   			}
+   		
+   		});
+   		
+   		$("#inputQ").focusout( function() {
+   			var currNo = $("#inputQ").val();
+   			//Check that q is valid
+   			if (isPrime(currNo)) {
+   				inputQ = currNo;
+   				$("#inputQError").hide();
+   				checkDuplicatePQ();
+   				checkSuccessPQ();
+   				updateQValues(inputQ);
+   			} else {
+   				$("#inputQError").show();
+   				checkDuplicatePQ();
+   				checkSuccessPQ();
+   			}
+   		});
+   		
+   		
+	    $('#pickPQ').click(function() {
+	        pickRandomPQs();
+	    });
+		
+   		 
+   		 
+   		 // STEP 2 -------------------------------
+   		// All done with PQ update hooks
+   		
+   		// STEP 3 --------------------------------
+   		// As above
+   		
+   		
+   		// STEP 4 --------------------------------
+   		 
+   		 
+   		$('#pickE').click(function() {
+	        $("#inputE").val(findE());
+	    });
+	    
+		function findE() {
+			for (i = 3 ; i < phi ; i++) {
+				if (coprime(i, phi) ) {
+					break;
+				}
+			}
+			inputE = i;
+			$("#e-factors").text(listFactors(inputE));
+			console.log("value is " + i);
+			checkCoprime(inputE);
+			return i;			
+		}
+		
+		$('#inputE').focusout(function() {
+			inputE = $('#inputE').val();
+			console.log("input e is " + inputE ) ; 
+	        $("#e-factors").text(listFactors(inputE));
+	        checkCoprime(inputE);
+	    });
+	   
+   		function checkCoprime(e ) {
+   			if ( ! (e < phi && e >= 3)  ) {
+   				$('#eRangeError').show();
+   				$('#eError').hide();
+   				$('#eSuccess').hide();
+   				$('#step4a').hide();
+   				$('#step5').hide();
+   			} else if ( coprime(e, phi) ) {
+   				$('#eRangeError').hide();
+   				$('#eError').hide();
+   				$('#eSuccess').show();
+   				$('#step4a').show();
+   				$('#step5').show();
+   			} else {
+   				$('#eRangeError').hide();
+   				$('#eError').show();
+   				$('#eSuccess').hide();
+   				$('#step4a').hide();
+   				$('#step5').hide();
+   			}
+   			updateEValues(e);
+   		}
+   		
+   		// STEP 5 --------------------------------
+   		$('#inputD').focusout(function() {
+			var inputDtemp = $('#inputD').val();
+			
+			//updateDValues(inputD);
+			
+	       $(".inputDVal").text(inputDtemp);
+	       var modResult = (inputDtemp * inputE) % phi;
+	       $("#d-mod-result").text(modResult);
+	       if (modResult == 1) {
+	       	inputD = inputDtemp;
+	       }
+	       checkDValue (inputDtemp);
+	        
+	    });
+	    
+	    $('#pickD').click( function() {
+	    	var d = findD(inputE, phi); 
+	    	
+	    	console.log("D is : " + d );
+	    	$("#inputD").val(d);
+	    	inputD = d;
+	    	updateDValues(d);
+	    	checkDValue (d);
+	    	
+	    });
+	    
+	    function findD(e, phi) {
+	 		var d = xgcd(e,phi)[0];
+	 		if (d < 0) {
+	 			d += phi;
+	 		}
+	 		return d;
+	 	}
+	 	
+	 	function checkDValue (d) {
+	 		var modResult = (d * inputE) % phi;
+	 		if (modResult == 1) {
+	 			$('#step5a').show();
+	 			$('#step6').show();
+	 			$('#encrypting').show();
+	 			$('#encrypting-test').show();
+   				//$('#step5').show();
+	 		} else {
+	 			$('#step5a').hide();
+	 			$('#step6').hide();
+	 			$('#encrypting').hide();
+	 			$('#encrypting-test').hide();
+	 		}
+	 	}
+	 	
+	 	// ENCRYPTING --------------------------------
+	 	$('#inputM').focusout(function() {
+			var char = $('#inputM').val()[0];
+			var charAscii = char.charCodeAt(0);
+			
+			$(".mValue").text(char.charCodeAt(0));
+			$(".mValueChar").text(char);
+			var n = inputP * inputQ;
+			
+			console.log("Encrypted is : " + modulo(charAscii, inputE, n));
+			$(".cValue").text( modulo(charAscii, inputE, n) );
+			
+			
+			mValue
+			 
+	    });
+	 	
+	 	 	// ENCRYPTING TEST --------------------------------
+	 	$('#inputM').focusout(function() {
+			var char = $('#inputM').val()[0];
+			var charAscii = char.charCodeAt(0);
+			
+			$(".mValue").text(char.charCodeAt(0));
+			$(".mValueChar").text(char);
+			var n = inputP * inputQ;
+			
+			console.log("Encrypted is : " + modulo(charAscii, inputE, n));
+			$(".cValue").text( modulo(charAscii, inputE, n) );
+			
+			
+			mValue
+			 
+	    });
+	    console.log( encrypt("Pizza", 7, 1403) );
+	    $('#plain-text').on("keyup", function() {
+	    	var plain = $('#plain-text').val();
+	    	$('#cipher-text').val(encrypt(plain, inputE, inputQ * inputP));
+	    });
+	    
+	 	function encrypt (string, e, n ) {
+	 		var cipher = "";
+	 		
+	 		for (var i = 0 ; i < string.length ; i++) {
+	 			cipher += modulo (string.charAt(i).charCodeAt(0), e, n) + " ";
+	 		} 
+	 		return cipher;
+	 	}
+   		
+   		// HOOK FUNCTIONS -----------------------------
+   		
+   		//Other items can hook their code here to be updated when P or Q is updated. 
+   		function updatePValues(p) {
+   			$(".pValue").text( p);
+   			$(".nValue").text( p * inputQ);
+   			$(".pLessOneValue").text( p -1);
+   			phi = (p -1) * (inputQ -1 );
+   			$(".phi").text( phi );
+   			$("#phi-factors").text( listFactors(phi));
+   			updateNValues(p * inputQ); 
+   		}
+   		
+	   	function updateQValues( q) {
+   			$(".qValue").text( q);
+   			$(".nValue").text( q * inputP);
+   			$(".qLessOneValue").text( q -1);
+   			phi =  (q -1) * (inputP -1 );
+   			$(".phi").text( phi );
+   			$("#phi-factors").text( listFactors(phi)); 
+   			updateNValues(p * inputQ); 
+   		} 
+   		function updateEValues( e) {
+   			$(".eValue").text( e);
+   			$("#d-mod-result").text(( inputD * inputE) % phi );
+   			$("#pubE").val(e);
+   		}  		
+   		
+   		function updateNValues(n) {
+   			$("#pubN").val(n);
+   			$("#priN").val(n);
+   		}
+   		
+   		function updateDValues( d) {
+   			$(".inputDVal").text(d);
+   			$(".dValue").text(d);
+   			$("#d-mod-result").text(( inputD * inputE) % phi );
+   			$("#priD").val(d);
+   		}
+   		
+   		
+   		
+   		// STEP 1 Funcs ------------------
+   		function revealNextStep() {
+   			$("#step2").show();
+   			$("#step3").show();
+   			$("#step4").show();
+   		}
+   		
+   		function checkSuccessPQ() {
+   			var p = $("#inputP").val();
+   			var q = $("#inputQ").val()
+   			if ( isNaN(q) || isNaN(p) || p =="" || q==""  ) {
+   				$("#step-one-success").hide();
+   			} else {
+   				if (isPrime ( p) && isPrime( q ) && p != q ) {
+   					$("#step-one-success").show();
+   					revealNextStep();
+   				} else {
+   					$("#step-one-success").hide();
+   				}
+   			}
+   			
+   		}
+   		
+   		function checkDuplicatePQ () {
+   			if ($("#inputP").val() == $("#inputQ").val()) {
+   				if (isPrime ($("#inputP").val()) && isPrime( $("#inputQ").val()) ) {
+   					$("#inputPQDuplicateError").show();
+   				}
+   			} else {
+   				$("#inputPQDuplicateError").hide();
+   				
+   			}
+   		}
+   		
+   		
+   		function pickRandomPQs() {
+   			var items = Array( 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97); 
+   			//, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197);
+   			var item = items[Math.floor(Math.random()*items.length)];
+   			
+   			var pValue = item;
+   			
+   			items = jQuery.grep(items, function(value) {
+			  return value != item;
+			});
+			
+			var qValue = items[Math.floor(Math.random()*items.length)];
+			
+				$("#step-one-success").show();
+			
+			$("#step2").show();
+   			$("#step3").show();
+   			$("#step4").show();
+			
+			//console.log("P value : " + pValue + " and Q value : " + qValue);
+			$("#inputP").val(pValue);
+			$("#inputQ").val(qValue);
+			inputQ = qValue;
+			inputP = pValue;
+			updatePValues(inputP );
+			updateQValues(inputQ );
+			
+		
+			
+   		}
+
+   		
+   		
+   		// CRYPTO FUNCTIONS --------------------------
+   		
+   		function listFactors(num) {
+		
+		    var half = Math.floor(num / 2), // Ensures a whole number <= num.
+		        str = '1', // 1 will be a part of every solution.
+		        i, j;
+		
+		    // Determine our increment value for the loop and starting point.
+		    num % 2 === 0 ? (i = 2, j = 1) : (i = 3, j = 2);
+		
+		    for (i; i <= half; i += j) {
+		        num % i === 0 ? str += ', ' + i : false;
+		    }
+		
+		    str += ', ' + num; // Always include the original number.
+		    console.log(str);
+		    return str;
+		}
+   		
+   		function isPrime(n) {
+			if ( isNaN(n) ){
+				return false;
+			}
+			if (n===1){
+				return false;
+			}
+			else if(n === 2){
+				return true;
+			} else{
+				for(var x = 2; x < n; x++) {
+					if(n % x === 0){
+						return false;
+					}
+				}
+				return true;  
+			}
+   		} // end
+   		
+   		
+   		function modulo (n, p, m){
+		  var result = 1;
+		  while(p--) {
+		    result = (result * n) % m;
+		  }
+		  
+		  return result;
+		}
+
+   		
+   		function coprime(a, b) {
+		  return gcd(a, b) === 1;
+		};
+   		
+
+   		
+		function gcd(a, b) {
+		  var c;
+		  a = +a;
+		  b = +b;
+		  // Same as isNaN() but faster
+		  if (a !== a || b !== b) {
+		    return NaN;
+		  }
+		  //Same as !isFinite() but faster
+		  if (a === Infinity || a === -Infinity || b === Infinity || b === -Infinity) {
+		    return Infinity;
+		  }
+		  // Checks if a or b are decimals
+		  if ((a % 1 !== 0) || (b % 1 !== 0)) {
+		    throw new Error("Can only operate on integers");
+		  }
+		  while (b) {
+		    c = a % b;
+		    a = b;
+		    b = c;
+		  }
+		  return (0 < a) ? a : -a;
+		};
+		
+		
+		 function xgcd(a, b) { 
+		   if (b == 0) {
+		     return [1, 0, a];
+		   }
+		
+		   temp = xgcd(b, a % b);
+		   x = temp[0];
+		   y = temp[1];
+		   d = temp[2];
+		   return [y, x-y*Math.floor(a/b), d];
+		 }
+
+   		
+   		
+   		
+   		
+   }
+   if (window.addEventListener) window.addEventListener("load", autorun, false);
+   else if (window.attachEvent) window.attachEvent("onload", autorun);
+   else window.onload = autorun;
+  </script>
+  </body>
+</html>
