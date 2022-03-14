@@ -2,7 +2,7 @@
 Case Study 👩‍⚖️ Snoop
 Engineering Stuff Last Week: RSA
 A good hash Deterministic One way Unique Avalanche Effect Collisions?
-A good cryptographic hash? Preimage resistance - Given h(m), hard to find m Second preimage resistance - Given m, hard to find m' where h(m) = h(m') Collision resistance - Hard to find m and m' where h(m) = h(m') Attacc Rainbow tables</description></item><item><title>Week 4</title><link>/week4/</link><pubDate>Tue, 08 Mar 2022 00:44:31 +1100</pubDate><guid>/week4/</guid><description> Week 4 Something Awesome You, you&amp;rsquo;re awesome 💖
+A good cryptographic hash? Preimage resistance Given h(m), hard to find m Second preimage resistance Given m, hard to find m' where h(m) = h(m') Collision resistance Hard to find m and m' where h(m) = h(m') Attacc Rainbow tables</description></item><item><title>Week 4</title><link>/week4/</link><pubDate>Tue, 08 Mar 2022 00:44:31 +1100</pubDate><guid>/week4/</guid><description> Week 4 Something Awesome You, you&amp;rsquo;re awesome 💖
 Week 3 Stuff Activities Logbooks Reflections Abit more about door security 🔐
 Case Study 🙉 Houdini
 CIA
