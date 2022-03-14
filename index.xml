@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>COMP6[84]41 Tutorial Slides</title><link>/</link><description>Recent content on COMP6[84]41 Tutorial Slides</description><generator>Hugo -- gohugo.io</generator><language>en-au</language><lastBuildDate>Tue, 08 Mar 2022 00:44:31 +1100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Week 4</title><link>/week4/</link><pubDate>Tue, 08 Mar 2022 00:44:31 +1100</pubDate><guid>/week4/</guid><description> Week 4 Something Awesome You, you&amp;rsquo;re awesome 💖
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>COMP6[84]41 Tutorial Slides</title><link>/</link><description>Recent content on COMP6[84]41 Tutorial Slides</description><generator>Hugo -- gohugo.io</generator><language>en-au</language><lastBuildDate>Tue, 15 Mar 2022 00:04:31 +1100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Week 5</title><link>/week5/</link><pubDate>Tue, 15 Mar 2022 00:04:31 +1100</pubDate><guid>/week5/</guid><description>Week 5 Something Awesome You, you&amp;rsquo;re awesome 💖
+Case Study 👩‍⚖️ Snoop
+Engineering Stuff Last Week: RSA
+A good hash Deterministic One way Unique Avalanche Effect Collisions?
+A good cryptographic hash? Preimage resistance - Given h(m), hard to find m Second preimage resistance - Given m, hard to find m' where h(m) = h(m') Collision resistance - Hard to find m and m' where h(m) = h(m') Attacc Rainbow tables</description></item><item><title>Week 4</title><link>/week4/</link><pubDate>Tue, 08 Mar 2022 00:44:31 +1100</pubDate><guid>/week4/</guid><description> Week 4 Something Awesome You, you&amp;rsquo;re awesome 💖
 Week 3 Stuff Activities Logbooks Reflections Abit more about door security 🔐
 Case Study 🙉 Houdini
 CIA
