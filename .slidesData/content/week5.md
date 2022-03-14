@@ -46,9 +46,12 @@ date: 2022-03-15T00:04:31+11:00
 
 ### A good cryptographic hash?
 
-* Preimage resistance - Given `h(m)`, hard to find `m`
-* Second preimage resistance - Given `m`, hard to find `m'` where `h(m) = h(m')`
-* Collision resistance - Hard to find `m` and `m'` where `h(m) = h(m')`
+* Preimage resistance
+    * Given `h(m)`, hard to find `m`
+* Second preimage resistance
+    * Given `m`, hard to find `m'` where `h(m) = h(m')`
+* Collision resistance
+    * Hard to find `m` and `m'` where `h(m) = h(m')`
 
 ---
 
