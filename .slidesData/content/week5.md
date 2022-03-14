@@ -2,7 +2,7 @@
 title: "Week 5"
 layout: "bundle"
 outputs: ["Reveal"]
-date: 2022-03-15T00:44:31+11:00
+date: 2022-03-15T00:04:31+11:00
 ---
 
 {{< slide class="center" >}}
